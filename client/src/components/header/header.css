@@ -5,9 +5,9 @@
 
 .header {
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: lightseagreen;
-    position: fixed;
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,16 +16,19 @@
 .logo {
     margin-left: 20px;
     font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.3em;
+    font-family: cursive;
+    font-size: 1.7em;
     cursor: pointer;
+    text-decoration: none;
+    color: whitesmoke;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    line-height: 50px;
 }
 
 .navigation-bar {
     display: flex;
     height: 100%;
     align-items: center;
-
     justify-content: space-evenly;
     background-color: black;
     color: whitesmoke;
@@ -37,7 +40,7 @@
 }
 
 
-.navigation-bar > div > a {
+.nav-item {
     display: block;
     width: 100%;
     height: 100%;
@@ -45,13 +48,28 @@
     color: white;
     text-align: center;
     align-items: center;
-    line-height: 40px;
+    line-height: 50px;
     padding: 0 20px;
 }
 
-.navigation-bar > div > a:hover {
-color: black;
-background-color: white;
+.nav-item:hover {
+    background-color: rgb(30, 30, 30);
+}
+
+.payments {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    align-items: center;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.imp {
+    width: 300px !important;
 }
 
 

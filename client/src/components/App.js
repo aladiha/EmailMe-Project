@@ -1,30 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as actions from '../actions';
 
 import Header from './header/header';
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
-const Landing = () => <h2>Landing</h2>
+import Landing from './landing/landing';
 
-const App = () => {
+const Dashboard = () => <h1>Dashboard</h1>
+const SurveyNew = () => <h1>SurveyNew</h1>
+
+const App = (props) => {
+
+    useEffect(() => {
+        props.fetchUser();
+    });
+
     return (
         <div>
             <BrowserRouter>
                 <div>
-                    <Header />
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
-                    <Route exact path="/" component={Landing}/>
+                    <Header/>
                     <Route exact path="/" component={Landing}/>
                     <Route exact path="/surveys" component={Dashboard}/>
                     <Route  path="/surveys/new" component={SurveyNew}/>
@@ -34,4 +29,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default connect(null, actions)(App);
