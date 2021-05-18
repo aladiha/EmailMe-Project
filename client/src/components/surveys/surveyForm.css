@@ -1,0 +1,73 @@
+.form-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.survey-form {
+    height: 70%;
+    width: 60%;
+    font-size: 1.4em;
+    position: relative;
+}
+
+.my-div {
+    background: rgba(54, 54, 54, 0.349);
+    border: rgba(54, 54, 54, 0.349) solid 1px;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+    font-size: 1.4em;
+    width: 100%;
+    height: 70px;
+    border-radius: 5px 5px 0 0;
+    font-family: cursive;
+}
+
+.survey-fields{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    justify-content: space-evenly;
+    border: rgba(54, 54, 54, 0.349) solid 1px;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    font-size:0.8em;
+    border-bottom: black 1px solid;
+
+}
+
+.submit {
+    background-color: black;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    width: 200px;
+    height: 60px;
+    border: 2px black solid;
+    border-radius: 5px;
+    font-family: cursive;
+    cursor: pointer;
+    float: right;
+    margin: 30px 0;
+}
+
+.submit:hover{
+    background-color: rgb(30, 30, 30);
+}

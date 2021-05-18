@@ -5,9 +5,9 @@ import * as actions from '../actions';
 
 import Header from './header/header';
 import Landing from './landing/landing';
+import Dashboard from './dashboard/dashboard';
+import SurveyNew from './surveys/surveyNew';
 
-const Dashboard = () => <h1>Dashboard</h1>
-const SurveyNew = () => <h1>SurveyNew</h1>
 
 const App = (props) => {
 

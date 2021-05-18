@@ -1,0 +1,23 @@
+
+.plusButton {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    color: white;
+    font-size: xx-large;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    transition-duration: 1s;
+    transform: scale(1, 1);
+}
+
+.plusButton:hover {
+    transition-duration: 1s;
+    transform: scale(1.2, 1.2);
+}
+
