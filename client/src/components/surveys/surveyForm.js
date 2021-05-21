@@ -1,35 +1,17 @@
 import React, { useState } from 'react';
-import { reduxForm, Field, reducer } from 'redux-form';
+import { reduxForm, Field, reducer, updateSyncErrors } from 'redux-form';
 import SurveyField from './surveyField';
 import './surveyForm.css'
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmail';
+import Fields from './formFields';
 
-
-const Fields = [
-    {
-        labelTitle: "Survey Title",
-        name: "title"
-    },
-    {
-        labelTitle: "Subject Line",
-        name: "subject"
-    },
-    {
-        labelTitle: "Email Body",
-        name: "body"
-    },
-    {
-        labelTitle: "Recipient List",
-        name: "emails"
-    }
-];
 
 const SurveyForm = props => {
 
     const renderFields = () => {
-        
         return (
             <div className="survey-fields">
                 {Fields.map(({labelTitle, name}) => {
@@ -42,7 +24,7 @@ const SurveyForm = props => {
     return (
         <div className="form-container">
             <form className="survey-form"
-                onSubmit={props.handleSubmit(values => console.log(values))}
+                onSubmit={props.handleSubmit(props.setShowReviewForm)}
             >
                 <div className="my-div">New Survey</div> 
                 {renderFields()}
@@ -60,6 +42,9 @@ const SurveyForm = props => {
 const validate = (values) => {
     const error = {};
 
+
+    error.emails = validateEmails(values.emails || '');
+
     if(!values.title)
         error.title = "you must provide a title!";
     if(!values.subject)
@@ -68,10 +53,12 @@ const validate = (values) => {
         error.body = "you must provide an email body!";
     if(!values.emails)
         error.emails = "you must provide at least one valid email!";
+
     return error;
 }
 
 export default reduxForm({
     validate,
-    form: 'surveyForm'
+    form: 'surveyForm',
+    destroyOnUnmount: false
 })(SurveyForm);
