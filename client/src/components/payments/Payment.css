@@ -1,21 +1,14 @@
 .nav-items {
-    display: block;
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    align-items: center;
-    line-height: 50px;
-    padding: 0 20px;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
     border: none;
-    font-size: 1.0em;
-
-    
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
 }
 
 .nav-items:hover {
-    background-color: rgb(30, 30, 30);
+    background-color: rgba(0,136,169,0.8);
     cursor: pointer;
 }

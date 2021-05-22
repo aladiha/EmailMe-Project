@@ -1,15 +1,17 @@
 import React from 'react';
 import PlusButton from '../styledComponents/plusButton/plusButton';
-import { Link } from 'react-router-dom';
+import * as actions from '../../actions';
+import {connect} from 'react-redux';
+import SurveyList from '../surveys/surveyList';
 
 const Dashboard = () => {
 
     return (
         <dev>
-            Dashboard
+            <SurveyList/>
             <PlusButton/>
         </dev>
     );
 }
 
-export default Dashboard;
+export default connect(null, actions)(Dashboard);

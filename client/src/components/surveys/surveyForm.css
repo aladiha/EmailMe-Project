@@ -8,33 +8,39 @@
 
 .survey-form {
     height: 70%;
-    width: 60%;
+    width: 700px;
     font-size: 1.4em;
     position: relative;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
 }
 
 .my-div {
-    background: rgba(54, 54, 54, 0.349);
-    border: rgba(54, 54, 54, 0.349) solid 1px;
     line-height: 70px;
     text-align: center;
-    color: white;
+    color: black;
     font-size: 1.4em;
     width: 100%;
     height: 70px;
     border-radius: 5px 5px 0 0;
     font-family: cursive;
+    font-weight: bolder;
 }
 
 .survey-fields{
     display: flex;
     flex-direction: column;
-    color: gray;
     height: 100%;
-    width: 100%;
+    color: gray;
     padding: 30px;
     justify-content: space-evenly;
-    border: rgba(54, 54, 54, 0.349) solid 1px;
+    padding-bottom: 100px;
     border-top: none;
     border-radius: 0 0 5px 5px;
 }
@@ -42,13 +48,12 @@
 .input {
     display: block;
     width: 100%;
-    height: 40px;
-    margin-top: 10px;
+    height: 40px;   
     outline: none;
     border: none;
     padding: 0 10px;
     font-size:0.8em;
-    border-bottom: black 1px solid;
+    border-bottom: lightgray 1px solid;
 
 }
 
@@ -58,16 +63,19 @@
     text-align: center;
     color: white;
     font-size: 1em;
-    width: 200px;
+    width: 150px;
     height: 60px;
     border: 2px black solid;
     border-radius: 5px;
     font-family: cursive;
     cursor: pointer;
-    float: right;
-    margin: 30px 0;
 }
 
 .submit:hover{
     background-color: rgb(30, 30, 30);
+}
+
+.survey-buttons{
+    display: flex;
+    justify-content: space-evenly;
 }

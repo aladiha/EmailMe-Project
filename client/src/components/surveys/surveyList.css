@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap');
+
+.surveyList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.listItem{
+    left: 100px;
+
+    width: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 25px;
+    margin: 20px 0;
+    -webkit-animation: myfirst 5s infinite;
+    animation: myfirst 5s infinite;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+}
+
+.card-footer{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(33, 160, 132);
+}
+
+.survey-title{
+    font-size: 1.6em;
+    font-weight: lighter;
+    font-family: 'KoHo', sans-serif;
+}
+
+.survey-body{
+    margin-top: 15px;
+}
+
+.content {
+    border-bottom: rgba(211, 211, 211, 0.418) solid 0.5px;
+    padding-bottom: 20px;
+}
+
+.footer-footer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right{
+    font-size: 0.9em;
+    color: gray
+}
+

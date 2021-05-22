@@ -13,7 +13,7 @@ export const Fields = [
     },
     {
         labelTitle: "Recipient List",
-        name: "emails"
+        name: "recipients"
     }
 ];
 

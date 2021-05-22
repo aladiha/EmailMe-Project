@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import SurveyForm from './surveyForm';
 import SurveyFormReview from './surveyFormReview';
+import {reduxForm} from 'redux-form';
 
 const SurveyNew = props => {
 
@@ -9,7 +10,6 @@ const SurveyNew = props => {
 
 
     const renderform = () => {
-        console.log(showReviewForm)
         if(showReviewForm){
             return <SurveyFormReview setShowReviewForm={() => setShowReviewForm(false)}/>;
         }
@@ -23,4 +23,6 @@ const SurveyNew = props => {
     );
 };
 
-export default SurveyNew;
+export default reduxForm({
+    form: 'surveyForm',
+})(SurveyNew);

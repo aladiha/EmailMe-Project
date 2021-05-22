@@ -1,28 +1,34 @@
 import React from 'react';
 import './surveyForm.css';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import {faArrowLeft, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
-import Fields  from './formFields';
+import formFields from './formFields';
+import './surveyFormReview.css';
+import * as actions from '../../actions';
+import {withRouter} from 'react-router-dom';
 
-const SurveyFormReview = ({setShowReviewForm, formValues}) => {
+const SurveyFormReview = ({setShowReviewForm, formValues, submitSurvey, history}) => {
 
     const renderFields = () => {
-        return Fields.map(field => {
-            return <div>
+        return formFields.map(field => {
+            return <div className="items">
             <label>{field.labelTitle}</label>
-            <div>{formValues[field.name]}</div>
+            <div className="item">{formValues[field.name]}</div>
         </div>
         })
     } 
 
-    return <div>
-        <h3>please confirm your entries</h3>
+    return <div className="review-container">
+        <h3 className="title">please confirm your entries</h3>
         <div>
            {renderFields()}
         </div>
-        <button style={{background: "brown", float: "none", border: "none"}} className="submit" onClick={setShowReviewForm}>
+        <button style={{background: "rgb(146, 107, 7)", float: "none", border: "none",width: "120px", float: "none"}} className="submit buttons" onClick={setShowReviewForm}>
                         <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> Back
+        </button>
+        <button className="submit buttons" style={{float: "none", border: "none", width: "120px", float: "right"}} onClick={() => submitSurvey(formValues, history)}>
+                    Send <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
         </button>
     </div>
 };
@@ -34,4 +40,4 @@ function mapStateToProps(state){
     };
 }
 
-export default connect(mapStateToProps)(SurveyFormReview);
+export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));

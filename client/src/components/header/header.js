@@ -13,13 +13,13 @@ const Header = (props) => {
                 return;
             case false:
                 return (
-                    <div><a href="/auth/google" className="nav-item">Login With Google</a></div>
+                    <li><a href="/auth/google" className="nav-item">Login With Google</a></li>
                 );
             default:
                 return <>
                     <div className="payments imp"><Payments/></div>
-                    <div className="nav-item">Credits: {props.auth.credits}</div>
-                    <div><a href="/api/logout" className="nav-item">Logout</a></div>
+                    <li className="nav-item">Credits: {props.auth.credits}</li>
+                    <li><a href="/api/logout" className="nav-item">Logout</a></li>
                 </>;
         }
     };
