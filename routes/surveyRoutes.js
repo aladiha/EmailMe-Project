@@ -17,8 +17,8 @@ module. exports = app => {
 
     app.post('/api/surveys/webhooks', (req, res) => {
         const p = new Path('/api/surveys/:surveyId/:choice');
-        console.log('clicked');
-        _.chain(req.body)
+        console.log(p);
+        const a = _.chain(req.body)
             .map(({email, url}) => {
                 const match = p.test(new URL(url).pathname);
                 if(match){
@@ -42,6 +42,7 @@ module. exports = app => {
                 ).exec();
             })
             .value();
+            console.log(a);
 
         res.send({});
     });
